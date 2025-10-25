@@ -23,4 +23,4 @@ Route::middleware('auth')->group(function () {
 });
 Route::get('/admin/search', [ContactController::class, 'search']);
 Route::post('/register', [UserController::class, 'register']);
-
+Route::delete('/delete',[ContactController::class, 'delete']);

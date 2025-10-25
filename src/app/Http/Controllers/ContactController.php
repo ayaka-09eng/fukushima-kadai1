@@ -42,4 +42,9 @@ class ContactController extends Controller
         $genders = Contact::select('gender')->distinct()->pluck('gender');
         return view('index', compact('contacts', 'categories', 'genders'));
     }
+
+    public function delete(Request $request) {
+        Contact::find($request->id)->delete();
+        return redirect('/admin');
+    }
 }

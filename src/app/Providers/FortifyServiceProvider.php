@@ -15,6 +15,7 @@ use Laravel\Fortify\Fortify;
 use Laravel\Fortify\Http\Requests\LoginRequest;
 use App\Http\Requests\CustomLoginRequest;
 use Illuminate\Support\Facades\Hash;
+use App\Models\User;
 
 class FortifyServiceProvider extends ServiceProvider
 {

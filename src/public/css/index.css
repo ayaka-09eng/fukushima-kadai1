@@ -9,6 +9,7 @@
     height: 27px;
     border: 1px solid #dccaba;
     background: #f6f6f6;
+    cursor: pointer;
 }
 
 .page {
@@ -138,6 +139,7 @@
     border: 1px solid #d9c6b5;
     color: #d9c6b5;
     background: #fcfcfc;
+    cursor: pointer;
 }
 
 /* ページネーション専用スタイル */
@@ -192,7 +194,22 @@
     cursor: default;
 }
 
+/* モーダルウィンドウ */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    overflow: auto;
+}
+
 .modal-content {
+    padding: 20px 30px;
+    background: #fff;
+    border: 1px solid #8b7969;
     width: 60%;
     height: 50rem;
     position: absolute;
@@ -212,5 +229,54 @@
 
 .modalEnd {
     display: block;
-    
+    font-size: 40px;
+    text-align: right;
+}
+
+.details-screen {
+    padding: 40px 100px;
+    display: flex;
+    flex-direction: column;
+}
+
+.details-screen__item {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.details-screen__item span {
+    font-weight: bold;
+    font-size: 20px;
+    width: 15rem;
+}
+
+.details-screen__item-input {
+    width: 20rem;
+    height: 30px;
+    border: none;
+    color: #8b7969;
+}
+
+.details-screen__item-textarea {
+    width: 20rem;
+    height: 110px;
+    border: none;
+    color: #8b7969;
+    resize: none;
+}
+
+.delete-form__button {
+    display: flex;
+    justify-content: center;
+}
+
+.delete-form__button-submit {
+    margin: 15px;
+    padding: 5px;
+    width: 70px;
+    background: #ba370d;
+    color: #fff;
+    border: none;
 }

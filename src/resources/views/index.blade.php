@@ -80,7 +80,14 @@
                     <td class="admin-table__item">
                         <div class="admin-table__item__detail">
                             <input type="text" value="{{ $contact['category']['content'] }}" disabled>
-                            <button class="admin-table__item__detail-button">詳細</button>
+                            @php
+                            $genderLabel = match($contact['gender']) {
+                            0 => '男性',
+                            1 => '女性',
+                            default => 'その他',
+                            };
+                            @endphp
+                            <button class="admin-table__item__detail-button modalStart" data-id="{{ $contact['id'] }}" data-name="{{ $contact['last_name'].'　'.$contact['first_name'] }}" data-gender="{{ $genderLabel }}" data-mail="{{ $contact['email'] }}" data-tel="{{ $contact['tel'] }}" data-address="{{ $contact['address'] }}" data-building="{{ $contact['building'] }}" data-content="{{ $contact['category']['content'] }}" data-text="{{ $contact['detail'] }}">詳細</button>
                         </div>
                     </td>
                 </tr>
@@ -94,46 +101,47 @@
             <div class="details-screen">
                 <div class="details-screen__item">
                     <span>お名前</span>
-                    <input class="details-screen__item-input" type="text">
+                    <input class="details-screen__item-input" type="text" id="modalName" disabled>
                 </div>
                 <div class="details-screen__item">
                     <span>性別</span>
-                    <input class="details-screen__item-input" type="text">
+                    <input class="details-screen__item-input" type="text" id="modalGender" disabled>
                 </div>
                 <div class="details-screen__item">
                     <span>メールアドレス</span>
-                    <input class="details-screen__item-input" type="text">
+                    <input class="details-screen__item-input" type="text" id="modalMail" disabled>
                 </div>
                 <div class="details-screen__item">
                     <span>電話番号</span>
-                    <input class="details-screen__item-input" type="text">
+                    <input class="details-screen__item-input" type="text" id="modalTel" disabled>
                 </div>
                 <div class="details-screen__item">
                     <span>住所</span>
-                    <input class="details-screen__item-input" type="text">
+                    <input class="details-screen__item-input" type="text" id="modalAddress" disabled>
                 </div>
                 <div class="details-screen__item">
                     <span>建物名</span>
-                    <input class="details-screen__item-input" type="text">
+                    <input class="details-screen__item-input" type="text" id="modalBuilding" disabled>
                 </div>
                 <div class="details-screen__item">
                     <span>お問い合わせの種類</span>
-                    <input class="details-screen__item-input" type="text">
+                    <input class="details-screen__item-input" type="text" id="modalContent" disabled>
                 </div>
                 <div class="details-screen__item">
                     <span>お問い合わせ内容</span>
-                    <textarea class="details-screen__item-textarea" name="" id=""></textarea>
+                    <textarea class="details-screen__item-textarea" id="modalText" disabled></textarea>
                 </div>
-                <form class="delete-form__button" action="" method="post">
+                <form class="delete-form__button" action="/delete" method="post">
                     @method('DELETE')
                     @csrf
                     <div class="delete-form__button">
-                        <button class="delete-form__button-submit"></button>
-                        <input type="hidden" name="" id="">
+                        <button class="delete-form__button-submit" type="submit">削除</button>
+                        <input type="hidden" name="id" id="modalDeleteId">
                     </div>
                 </form>
             </div>
         </div>
     </div>
 </div>
+<script src="{{ asset('js/main.js') }}"></script>
 @endsection
