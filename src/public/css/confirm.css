@@ -1,0 +1,85 @@
+.page {
+    color: #8b7969;
+}
+
+.confirm-page {
+    max-width: 1230px;
+    margin: 0 auto;
+    padding: 10px 15px;
+}
+
+.page-title {
+    text-align: center;
+}
+
+.form {
+    margin: 0 auto;
+    width: 70%;
+}
+
+.page-title h2 {
+    margin-bottom: 30px;
+}
+
+.confirm-table {
+    border: 1px solid #e1dad4;
+}
+
+.confirm-table__inner {
+    width: 100%;
+}
+
+.confirm-table__row {
+    text-align: left;
+}
+
+.confirm-table__header {
+    width: 30%;
+    padding: 15px 50px;
+    background: #baa899;
+    color: #fff;
+    border-bottom: 1px solid #e1dad4;
+}
+
+.confirm-table__text {
+    width: 100%;
+    padding: 15px;
+    border-bottom: 1px solid #e1dad4;
+}
+
+.confirm-table__text * {
+    width: 100%;
+    outline: none;
+    border: none;
+    color: #8b7969;
+}
+
+.confirm-table__text textarea {
+    line-height: 20px;
+}
+
+.button {
+    width: 20%;
+    margin: 40px auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+.form__button {
+    width: 40%;
+    height: 30px;
+}
+
+.form__button-submit {
+    width: 100%;
+    height: 100%;
+    background: #82756a;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+.form__button-fixes {
+    width: 100%;
+    color: #82756a;
+}
