@@ -27,8 +27,8 @@ docker-compose up -d --build
 docker-compose exec php bash  
 composer install  
   
-アプリケーションキーを作成  
-５）php artisan key:generate  
+５）アプリケーションキーを作成  
+php artisan key:generate  
   
 ６）DBのテーブルを作成  
 php artisan migrate  
